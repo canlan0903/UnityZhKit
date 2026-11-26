@@ -1,0 +1,22 @@
+{
+ "name": "UnityZhKit",
+ "version": "1.1.0",
+ "purpose": "给 Unity IL2CPP 游戏做运行时汉化：运行时换文本 + 动态字体，不改游戏资源，可干净卸载",
+ "entry_for_ai": "AGENT_START_HERE.md",
+ "entry_for_human": "README.md",
+ "manual": "SKILL.md",
+ "cli": "tools/zhpatch.py",
+ "plugin": "ZhFontFix.dll",
+ "requires": [
+  "UnityPy (pip)",
+  "可选 .NET SDK 8（需为其他游戏重编插件时）"
+ ],
+ "applies_to": "Unity 2021/2022/Unity6 IL2CPP, TextMeshPro",
+ "quick_start": [
+  "powershell -File install.ps1 -GameDir <游戏目录>",
+  "启动游戏看 BepInEx/LogOutput.log",
+  "python tools/zhpatch.py extract/translate/build",
+  "把生成的表放到 BepInEx/Translation/zh-CN/Text/"
+ ],
+ "pitfalls_count": 6
+}

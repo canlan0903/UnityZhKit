@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!--
+    编译前把 BepInExDir 指向你要改的那个游戏的 BepInEx 目录：
+      dotnet build -c Release -p:BepInExDir="D:\Games\SomeGame\BepInEx"
+    引用的是该游戏自己生成的 interop 程序集，所以必须针对目标游戏编译。
+  -->
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <AssemblyName>ZhFontFix</AssemblyName>
+    <LangVersion>latest</LangVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <NoWarn>CS0436</NoWarn>
+    <BepInExDir Condition="'$(BepInExDir)'==''">BepInEx</BepInExDir>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BepInEx.Core"><HintPath>$(BepInExDir)\core\BepInEx.Core.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="BepInEx.Unity.IL2CPP"><HintPath>$(BepInExDir)\core\BepInEx.Unity.IL2CPP.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="BepInEx.Unity.Common"><HintPath>$(BepInExDir)\core\BepInEx.Unity.Common.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Il2CppInterop.Runtime"><HintPath>$(BepInExDir)\core\Il2CppInterop.Runtime.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Il2Cppmscorlib"><HintPath>$(BepInExDir)\interop\Il2Cppmscorlib.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.CoreModule"><HintPath>$(BepInExDir)\interop\UnityEngine.CoreModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.TextRenderingModule"><HintPath>$(BepInExDir)\interop\UnityEngine.TextRenderingModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.TextCoreFontEngineModule"><HintPath>$(BepInExDir)\interop\UnityEngine.TextCoreFontEngineModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.UI"><HintPath>$(BepInExDir)\interop\UnityEngine.UI.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Unity.TextMeshPro"><HintPath>$(BepInExDir)\interop\Unity.TextMeshPro.dll</HintPath><Private>false</Private></Reference>
+  </ItemGroup>
+</Project>

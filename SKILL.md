@@ -160,7 +160,7 @@ UnityZhKit/
 ├─ tools/zhpatch.py                抽取/翻译/生成表 CLI
 ├─ tools/glossary.txt              术语表示例
 ├─ samples/                        翻译表样例与放置位置
-└─ translation/                    一份真实成品翻译表（2060 条，可作为格式参考）
+└─ samples/                        翻译表格式样例（成品表不随仓库分发）
 ```
 
 ## 复查清单（交付前自查）
